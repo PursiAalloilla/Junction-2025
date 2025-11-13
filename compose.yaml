@@ -1,0 +1,30 @@
+services:
+  server:
+    build: server
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - ./server:/app
+    env_file:
+      - project.env
+  
+
+
+  client:
+    build: client
+    restart: unless-stopped
+<<<<<<< HEAD
+    env_file:
+      - project.env
+=======
+>>>>>>> e2ece48 (first commit)
+    volumes:
+      - ./client:/app
+    ports:
+      - 5173:5173
+<<<<<<< HEAD
+    depends_on:
+      - server
+=======
+>>>>>>> e2ece48 (first commit)
