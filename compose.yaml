@@ -7,7 +7,7 @@ services:
     volumes:
       - ./server:/app
     env_file:
-      - project.env
+      - client/.env
   
 
 
@@ -15,7 +15,7 @@ services:
     build: client
     restart: unless-stopped
     env_file:
-      - project.env
+      - client/.env
     volumes:
       - ./client:/app
     ports:
