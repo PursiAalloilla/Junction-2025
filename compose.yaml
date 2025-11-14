@@ -3,7 +3,7 @@ services:
     build: server
     restart: unless-stopped
     ports:
-      - 8000:8000
+      - 127.0.0.1:8000:8000
     volumes:
       - ./server:/app
     env_file:
@@ -19,6 +19,6 @@ services:
     volumes:
       - ./client:/app
     ports:
-      - 5173:5173
+      - 127.0.0.1:5173:5173
     depends_on:
       - server
