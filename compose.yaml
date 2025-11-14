@@ -7,7 +7,7 @@ services:
     volumes:
       - ./server:/app
     env_file:
-      - client/.env
+      - server/.env
   
 
 
