@@ -1,13 +1,19 @@
-FROM node:latest
-
+FROM node:20-bullseye-slim
+ 
+# Set the working directory inside the container
 WORKDIR /app
-
-COPY . .
-
+ 
+# Copy package.json and package-lock.json
+COPY package*.json ./
+ 
+# Install dependencies (including optional dependencies for rollup)
 RUN npm install
-
+ 
+# Copy the rest of your application files
+COPY . .
+ 
+# Expose the port your app runs on
 EXPOSE 5173
-
-USER node
-
+ 
+# Define the command to run your app
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
